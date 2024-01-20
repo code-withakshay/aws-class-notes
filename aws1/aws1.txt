@@ -1,0 +1,230 @@
+Rest API's 
+===========
+REST means REpresentational State Transfer.
+
+API means Application Programming Interface.
+
+REST is a architectural style which defines set of constraints that used to develop web services.
+
+REST API is a way of accessing webservices in a simple and flexible manner without having any processing.
+
+API which fallows REST standards is called restfull API.
+
+RESTful API is an interface where two systems can exchange the information over the network securly.
+
+All the communication we can perform by using HTTP request.
+
+Diagram: REST-API
+
+We have following list of HTTP methods to make a REST API call.
+
+
+Method			Description
+-------			------------
+GET			It is used to read the resources
+
+POST			It is used to create the resources
+
+PUT			It is used to update the existing resources.
+
+DELETE			IT is used to delete the resources.
+
+
+We have following REST annotation.
+
+1) @RestControlling 
+
+2) @GetMapping 
+
+3) @PostMapping
+
+4) @PutMapping 
+
+5) @DeleteMapping 
+
+
+We have four types of REST API's.
+
+1) Public/Open API:
+
+2) Partner API 
+
+3) Private API 
+
+4) Composite API 
+
+
+
+AWS
+====
+
+
+Q) Types of applications ?
+
+We have two types of applications.
+
+1) Client based application 
+
+2) Web based application 
+
+1) Client based application
+----------------------------
+Application which is running in a user's computer is called client based application.
+
+In general, An application which need to be installed in a user's computer is called client based application.
+
+Client based application can be used by perticular user.
+
+All client based applications are ruled out.
+
+ex:
+	VLC Media palyer 
+
+
+2) Web based application 
+-------------------------
+An application which can be access from anywhere over the network is called web based application.
+
+ex:
+	Flipkart 
+	Amazon 
+
+
+Q) Who can we develop an application which can be accessible by thousands and lakhs of users?
+
+First a software developer need to develop an application.
+
+Later that application need to be host on the top of the server.	
+
+Diagram: aws1.1
+
+
+
+Q) What is the difference between PC and server?
+
+PC						Server
+------						--------
+A personal computer is designed for 		A server is designed to operate multiple users.
+perticular user.
+
+It contains less storage from gigabyte to 	It contains high storage from terabytes to 
+terabytes.					petabytes.
+
+It contains simple structure.			It contains complex structure.
+
+Low network capability.				High network capability.
+
+It contains single processor.			It contains multiple processors.
+
+
+Q)Will company use one server or multiple servers?
+
+Depends upon the scale of the company they will use the servers.
+
+
+In short,companies revenue is completely rely on performance and availability of these machines(servers).So company need to ensure that servers are operating all the time.
+
+
+To build an application on the top of the servers we need organize the infrastructure.
+
+Each and every IT company will have their own data center.
+
+A data center is a place where we host our servers.
+
+Diagram: aws1.2
+
+Maintaining a data center is a very big deal.
+
+1. Required private and secure place
+2. Server maintainence team (database admin,network admin,monitoring team and etc). 
+3. 24/7 we need to maintain temperature 16 to 19 degree celsius. 
+4. 24/7 Dual power supply  (government and private power supplier)
+5. 24/7 Dual Network (ISP)
+6. Need to follow geographical orders/standards to protect customer data which 
+   contains physical security and network security.
+7. Hardware Refresh 
+ 
+
+Q)Do you think is it easy to organize data center?
+
+No, it is not easy to organize the data center.
+
+Specially startup's can't be proceeded because data center is a capital intensive.
+
+If we see, From 2009 to 2022 number of IT companies are drastically increases 
+due to cloud.
+
+
+
+Q)What is Cloud computing ?
+
+Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go model. 
+
+Example:
+	Assume that my business is a e-commerce.
+	During christmas or festival time I need thousands of servers and 
+	those servers i am using only for limited days.
+
+
+	Q)Do you think it is wise to buy thousands of servers only for limited days 
+	and keeping them ideal for rest of the days? 
+
+	OR 
+
+	Q)I can lease them for few days and return them once it is done?
+
+	answer : lease . 
+
+	That's where cloud providers came into the picture.
+	ex:
+		Amazon
+		Microsoft
+		IBM
+		Google
+		Alibaba
+		and etc.
+
+In 2002,2003 , Amazon they starting their e-commerce , keeping the future demands in mind they got extends amount of hardware and their calculation absolute went wrong.
+
+Whatever the forecasting they have done with respective to utilization it really went bad and they felt that only 20% to 30% of servers they are using.Almost 70% of their prediction went wrong and they left with no choice.
+
+One of the intern of amazon got an idea , why don't we give our excess amount of server on lease for the people who want.In that way idea of cloud came to a picture.
+ex:
+	AWS
+	Azure
+	GCP
+	alibaba cloud
+	IBM cloud
+
+Diagram: aws1.3
+
+In 2004 the concept of cloud started.
+
+
+Q)What is AWS?
+
+AWS stands for Amazon Web Services.
+
+It offers infrastructure as a service.
+
+From 2004 to 2014 they are monopoly in industry.
+
+AWS was a leader for almost 10 years.
+
+Almost 75% to 80% of market occupied by AWS i.e Out of 100 , 75 to 80 customers are aws customers. 
+
+It is one of the leading cloud service provider accross the world.
+
+In 2014 , microsoft Azure came in to a picture.
+
+
+Q)Why to choose AWS?
+
+AWS is been for industry more then a decade.Hence majority of the customers on Amazon cloud and learning AWS is ensure that you will get secure job.
+
+
+
+
+
+
+
