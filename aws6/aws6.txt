@@ -1,0 +1,179 @@
+Elastic BeanStalk
+==================
+AWS Elastic Beanstalk is an AWS-managed service for web applications.
+
+Elastic Beanstalk is a Platform As A Service (PAAS) as it allows users to directly use a pre-configured server for their application.
+
+First, create an application and select an environment, configure the environment, and deploy the application.
+
+
+
+Steps to deploy war file in Tomcat server using Elastic BeanStalk
+==================================================================
+
+Step1:
+--------
+	Create a Dynamic web application i.e LoginApp. 
+
+Deployment Directory Structure
+==============================
+LoginApp
+|
+|----Java Resources
+|	|
+	|------src
+		|
+		|---com.ihub.www
+			|
+			|----LoginSrv.java
+
+|----Web Content
+	|
+	|------index.html
+	|------view.jsp 
+	|------error.jsp 
+	|
+	|------WEB-INF
+		|
+		|----web.xml 
+		|
+		|-------lib
+			|
+			|-----servert-api.jar
+
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.html
+----------
+
+<form action="test" method="GET">
+
+	<center><h3>Login Here</h3></center>
+
+	<table align="center">
+		<tr>
+			<td>UserName:</td>
+			<td><input type="text" name="t1"/></td>
+		</tr>
+		<tr>
+			<td>Passoword:</td>
+			<td><input type="password" name="t2"/></td>
+		</tr>
+		<tr>
+			<td><input type="reset" value="reset"/></td>
+			<td><input type="submit" value="submit"/></td>
+		</tr>
+	</table>
+
+</form>
+
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>LoginSrv</servlet-name>
+  	<servlet-class>com.ihub.www.LoginSrv</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginSrv</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+LoginSrv.java
+-------------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginSrv extends HttpServlet 
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+	
+		//reading form data 
+		String uname=req.getParameter("t1");
+		String pass=req.getParameter("t2");
+		
+		if(pass.equals("admin"))
+		{
+			RequestDispatcher rd=req.getRequestDispatcher("view.jsp");
+			rd.forward(req,res);
+		}
+		else
+		{
+			RequestDispatcher rd=req.getRequestDispatcher("error.jsp");
+			rd.forward(req,res);
+		}
+		pw.close();
+	}
+}
+
+
+
+view.jsp
+-------
+<center>
+	<h3 style="color:green">Login Successfully!!</h3>
+	<br><br>
+	<a href="./index.html">| Home |</a>	
+</center>
+
+
+error.jsp
+---------
+<center>
+	<h3 style="color:red">Login Failed!!</h3>
+	<br><br>
+	<a href="./index.html">| Home |</a>	
+</center>
+
+
+step2:
+------
+	Convert dynamic web project to war file.
+
+step3:
+-----
+	Create a role for Identity and Access Management (IAM).
+	 	
+	Diagram: aws6.1 to aws6.4
+
+step4:
+------
+	Create a a application and deploy the war file using elastic beanstalk.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
